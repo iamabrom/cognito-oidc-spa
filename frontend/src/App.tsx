@@ -51,10 +51,10 @@ const App: React.FC = () => {
 
     return (
       <>
-        <SyntaxHighlighter language="json" style={tomorrowNightBright} showLineNumbers="1" wrapLongLines="1" customStyle={{ textAlign: "left" }}>
+        <SyntaxHighlighter language="json" style={tomorrowNightBright} showLineNumbers={true} wrapLongLines={true} customStyle={{ textAlign: "left" }}>
           {JSON.stringify(parseJwt(idToken), null, 2)}
         </SyntaxHighlighter>
-        <SyntaxHighlighter language="json" style={tomorrowNightBright} showLineNumbers="1" wrapLongLines="1" customStyle={{ textAlign: "left" }}>
+        <SyntaxHighlighter language="json" style={tomorrowNightBright} showLineNumbers={true} wrapLongLines={true} customStyle={{ textAlign: "left" }}>
           {JSON.stringify(parseJwt(accessToken), null, 2)}
         </SyntaxHighlighter>
       </>
