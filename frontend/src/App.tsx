@@ -34,6 +34,11 @@ const App: React.FC = () => {
           sessionStorage.setItem("id_token", user.id_token || "");
           sessionStorage.setItem("access_token", user.access_token);
           sessionStorage.setItem("refresh_token", user.refresh_token ?? "");
+          // clear the code and state parameters once processed
+          const url = new URL(window.location.href);
+          url.searchParams.delete("code");
+          url.searchParams.delete("state");
+          window.history.replaceState({}, document.title, url.pathname + url.search);
         })
         .catch((error) => {
           console.error("Error during authentication:", error);
